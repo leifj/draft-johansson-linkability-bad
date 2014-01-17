@@ -15,10 +15,17 @@ author:
       name: Leif Johansson
       email: leifj@sunet.se
       org: SUNET
+   -
+      ins: L. Nordberg
+      name: Linus Nordberg
+      email: linus@nordu.net
+      org: NORDUnet
 
 --- abstract
 
 Current debate on pervasive monitoring often focus on passive attacks on the protocol and transport layers but even if these issues were eliminated through the judicious use of encryption, roughly the same information would still be available to an attacker who is able to (legally or otherwize) obtain access to linked data sets which are being maintained by large content and service providers.
+
+[FIXME: needs updating]
 
 --- middle
 
@@ -28,6 +35,9 @@ Introduction
 This I-D is submitted as a position paper for the joint IAB/W3C STRINT workshop 2014. The author wishes to call attention to the fact that linked data sets are a source of information, sometimes every bit as useful as anything that can be gleaned from passive monitoring of Internet traffic. Such data sets are routinely generated and maintained by service and content providers and are often a source of secondary (or even primary) income for those that own and generate them.
 
 In the current discussion on pervasive monitoring we often overlook the fact that even as more encryption is used, making passive attacks harder, focus may simply shift to active attacks on owners of linked data sets. We should strike at the root of this problem by making it less appealing to maintain these data sets and by offering users a measure of control over how their information is used and shared.
+
+[FIXME: needs updating]
+
 
 A Simple Example
 ================
@@ -51,12 +61,48 @@ Instead of using the credit card number as an implicit grant (of a right to obta
 
 Some credit card companies have actually taken first steps towards this by involving the user directly in a second factor authentication (typically to reduce the risk of fraud). This practice follows a model for 3:rd party authentication services (aka identity providers) commonly used in the enterprise and R&E community. Experience from the R&E identity federation community shows that access control using identity providers and non-linkable pseudonomous identifiers is by no means problem free, but can be made to work in many situations. 
 
-Incentives
+Another example of possible collection by service providers
+===============
+
+Links between data objects don't have to have a probability of 1 in
+order to blur the line between private and public actions on the
+internet. When we say "Transaction A is linked to transaction B", we
+don't mean "an adversary concludes with P=1 that A and B were
+performed by the same client" but rather "An adversary concludes that
+A and B were performed by the same client with P significantly greater
+than if A and B were two randomly chosen transactions."
+
+Web browsers are typically fingerprintable even when the user tries to
+avoid sticking out when compared to other users of a given web
+site. Regardless of encryption, the operator of a web site can more
+often than not tell one user from another by looking at information
+sent by the browser without the users knowledge.
+
+Some examples of sources for fingerprintability in web browsers are
+information about browser window and desktop resolution, browser
+toolbar presence, title bar font size and window manager settings
+[TORBUTTON-DESIGN]. This has been confirmed by empirical studies like
+the [PANOPTICLICK] study done by the EFF.
+
+Incentives for collecting data
 ==========
 
 There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to identify a user with a higher degree of certainty.
 
 Unfortunately there seem to be few costs associated with keeping large linked data sets around - stolen user credentials in the 10s of thousands rarely result in more than a brief notice in the news anymore. To date the IETF community have focused on how to avoid the use of long-term credentials (passwords) to reduce the effects of such attacks. We need to broaden our scope to find ways to disincentivize the (over)use of linkable attributes.
+
+The LCD of privacy
+===============
+
+Out of all the transactions that a given user performs over the time
+her traffic is being observed by an adversary, the most linkable one
+will define her level of privacy towards that adversary.
+
+In other words, linkability is the least common denominator of privacy
+and must be treated as the privacy killer that it is. When we allow
+for too much linkability in protocols we must acknowledge the fact
+that we're building something that can't provide privacy.
+
 
 "Conclusions"
 =============
@@ -65,7 +111,16 @@ Part of the Internet economy seems to be based on linked data sets and linkable 
 
 Last but not least the Internet community needs to decide what it considers acceptable behaviour wrt to attribute linking.
 
+[FIXME: needs updating]
+
+
+References
+==========
+
+[TORBUTTON-DESIGN] "Torbutton Design Documentation" https://www.torproject.org/torbutton/en/design/
+[PANOPTICLICK] "How Unique Is Your Web Browser?" https://panopticlick.eff.org/browser-uniqueness.pdf
+
 Acknowledgements
 ================
 
-Many thanks to Linus Nordberg for important contributions and lots of interesting discussions on this topic. Many thanks also to Lucy Lynch who is the source of much wisdom, the "I'm just browsing" response to identification on the web in particular.
+Many thanks to Nick Mathewson for important contributions on the topic of linkability. Many thanks also to Lucy Lynch who is the source of much wisdom, the "I'm just browsing" response to identification on the web in particular.
