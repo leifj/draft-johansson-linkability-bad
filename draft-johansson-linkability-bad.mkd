@@ -1,6 +1,6 @@
 ---
 title: Linkability Considered Harmful
-docname: draft-johansson-linkability-bad-00
+docname: draft-johansson-linkability-bad-01
 date: 2014-01-15
 
 ipr: trust200902
