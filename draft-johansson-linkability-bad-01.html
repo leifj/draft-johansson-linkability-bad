@@ -354,14 +354,12 @@
   <link href="#rfc.toc" rel="Contents"/>
 <link href="#rfc.section.1" rel="Chapter" title="1 Introduction"/>
 <link href="#rfc.section.2" rel="Chapter" title="2 A Simple Example"/>
-<link href="#rfc.section.3" rel="Chapter" title="3 From Linkable Identifiers to Attributes"/>
-<link href="#rfc.section.4" rel="Chapter" title="4 Another example of possible collection by service providers"/>
-<link href="#rfc.section.5" rel="Chapter" title="5 Incentives for collecting data"/>
-<link href="#rfc.section.6" rel="Chapter" title="6 The LCD of privacy"/>
-<link href="#rfc.section.7" rel="Chapter" title="7 &#x201C;Conclusions&#x201D;"/>
-<link href="#rfc.section.8" rel="Chapter" title="8 References"/>
-<link href="#rfc.section.9" rel="Chapter" title="9 Acknowledgements"/>
-<link href="#rfc.references" rel="Chapter" title="10 References"/>
+<link href="#rfc.section.3" rel="Chapter" title="3 Avoiding Linkable Attributes"/>
+<link href="#rfc.section.4" rel="Chapter" title="4 Linkability and Probability"/>
+<link href="#rfc.section.5" rel="Chapter" title="5 Incentives for Collecting Data"/>
+<link href="#rfc.section.6" rel="Chapter" title="6 The Least common Denominator of Privacy"/>
+<link href="#rfc.section.7" rel="Chapter" title="7 Acknowledgements"/>
+<link href="#rfc.references" rel="Chapter" title="8 Informative References"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -413,7 +411,6 @@
   <a href="#rfc.abstract">Abstract</a>
 </h1>
 <p>Current debate on pervasive monitoring often focus on passive attacks on the protocol and transport layers but even if these issues were eliminated through the judicious use of encryption, roughly the same information would still be available to an attacker who is able to (legally or otherwize) obtain access to linked data sets which are being maintained by large content and service providers.</p>
-<p>[FIXME: needs updating]</p>
 <h1 id="rfc.status">
   <a href="#rfc.status">Status of This Memo</a>
 </h1>
@@ -429,36 +426,46 @@
 <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a></h1>
 <p id="rfc.section.1.p.1">This I-D is submitted as a position paper for the joint IAB/W3C STRINT workshop 2014. The author wishes to call attention to the fact that linked data sets are a source of information, sometimes every bit as useful as anything that can be gleaned from passive monitoring of Internet traffic. Such data sets are routinely generated and maintained by service and content providers and are often a source of secondary (or even primary) income for those that own and generate them.</p>
 <p id="rfc.section.1.p.2">In the current discussion on pervasive monitoring we often overlook the fact that even as more encryption is used, making passive attacks harder, focus may simply shift to active attacks on owners of linked data sets. We should strike at the root of this problem by making it less appealing to maintain these data sets and by offering users a measure of control over how their information is used and shared.</p>
-<p id="rfc.section.1.p.3">[FIXME: needs updating]</p>
+<p id="rfc.section.1.p.3">Linkability is not a new concept and the authors do not propose to (re)define the concept in this draft. Instead our intent is to show (with some simple examples) how linkability occurs in practice and what effect linkability has on privacy on the Internet.</p>
 <h1 id="rfc.section.2"><a href="#rfc.section.2">2.</a> <a href="#a-simple-example" id="a-simple-example">A Simple Example</a></h1>
 <p id="rfc.section.2.p.1">Service providers (we use this term in a general sense, and not with a view to any particular protocols etc) typically manage users and billing records. This leads to a data set being created for every user of that service. Most services employ a simple pattern for user enrollment which relies on an email address as a means of (supposedly) uniquely identifying the user. The email address has become the defacto user identifier on the Internet.</p>
 <p id="rfc.section.2.p.2">When a user pays for the service a pair of linked data sets is created: the user data at the service provider is associated (via the credit card information) to the user data held by the credit card company. The value of the linked data, aswell as the risk to the user, is higher than the value/risk involved in the two data sets taken as separate entities. For instance the linked data says something about the buying habits of the user (based on the use of the particular credit card) which in itself is valuable information. </p>
 <p id="rfc.section.2.p.3">Linking increases the risk to the user aswell. With every service that stores the users credit card the risk of exposure to active attacks increase as events in recent years have made it painfully clear.</p>
 <p id="rfc.section.2.p.4">If this example seems overly simplified or even naive to bring up, consider the simple observation that when we visit a store in the physical world we have the ability to &#8220;browse&#8221;, i.e to view and select among the offered goods without having to identify ourselves or prove our ability to pay for any of the goods in the store. This aspect of the real world has not been translated into the online world where prospective customers are routinely fingerprinted and our behaviour tracked even when we have shown no intention of engaging in a business transaction with the store owner.</p>
 <p id="rfc.section.2.p.5">Naturally there must be ways to &#8220;conduct business on the Internet&#8221;, but there are ways to enable business without the need for linkable attributes. In fact there are ways to enable business using non-linkable attributes in such a way that the risk to business owners are reduced.</p>
-<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#from-linkable-identifiers-to-attributes" id="from-linkable-identifiers-to-attributes">From Linkable Identifiers to Attributes</a></h1>
+<h1 id="rfc.section.3"><a href="#rfc.section.3">3.</a> <a href="#avoiding-linkable-attributes" id="avoiding-linkable-attributes">Avoiding Linkable Attributes</a></h1>
 <p id="rfc.section.3.p.1">The way to avoid linking is simple (and yet so hard in practice): avoid the use of linkable attributes. In our e-commerce example above, the credit card number is a linkable attribute. However in this case the credit card is strictly speaking not needed at the service provider. When the user provides her credit card information to the service provider she is actually providing an authorization to the service giving the service provider the right to obtain payment from the credit card company.</p>
 <p id="rfc.section.3.p.2">Instead of using the credit card number as an implicit grant (of a right to obtain payment), a token that isn&#8217;t linkable across identifier domains could be used to represent an explicit grant issued on behalf of the user by the credit card company to the service provider. This is a simple example of a general pattern: instead of using a linkable user identifier, provide access to an attribute representing some property of the user that used to grant specific access. </p>
 <p id="rfc.section.3.p.3">Some credit card companies have actually taken first steps towards this by involving the user directly in a second factor authentication (typically to reduce the risk of fraud). This practice follows a model for 3:rd party authentication services (aka identity providers) commonly used in the enterprise and R&amp;E community. Experience from the R&amp;E identity federation community shows that access control using identity providers and non-linkable pseudonomous identifiers is by no means problem free, but can be made to work in many situations. </p>
-<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#another-example-of-possible-collection-by-service-providers" id="another-example-of-possible-collection-by-service-providers">Another example of possible collection by service providers</a></h1>
-<p id="rfc.section.4.p.1">Links between data objects don&#8217;t have to have a probability of 1 in order to blur the line between private and public actions on the internet. When we say &#8220;Transaction A is linked to transaction B&#8221;, we don&#8217;t mean &#8220;an adversary concludes with P=1 that A and B were performed by the same client&#8221; but rather &#8220;An adversary concludes that A and B were performed by the same client with P significantly greater than if A and B were two randomly chosen transactions.&#8221;</p>
+<h1 id="rfc.section.4"><a href="#rfc.section.4">4.</a> <a href="#linkability-and-probability" id="linkability-and-probability">Linkability and Probability</a></h1>
+<p id="rfc.section.4.p.1">Links between data sets do not necessarily have to have be uniquely linkable in order to blur the line between private and public actions on the Internet. Linkability is really about probability and often absolute certainty (demonstrated in the example above) is not needed for an an adversary to conclude that two actions were likely performed by the same client.</p>
 <p id="rfc.section.4.p.2">Web browsers are typically fingerprintable even when the user tries to avoid sticking out when compared to other users of a given web site. Regardless of encryption, the operator of a web site can more often than not tell one user from another by looking at information sent by the browser without the users knowledge.</p>
-<p id="rfc.section.4.p.3">Some examples of sources for fingerprintability in web browsers are information about browser window and desktop resolution, browser toolbar presence, title bar font size and window manager settings [TORBUTTON-DESIGN]. This has been confirmed by empirical studies like the [PANOPTICLICK] study done by the EFF.</p>
-<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#incentives-for-collecting-data" id="incentives-for-collecting-data">Incentives for collecting data</a></h1>
+<p id="rfc.section.4.p.3">Some examples of sources for fingerprintability in web browsers are information about browser window and desktop resolution, browser toolbar presence, title bar font size and window manager settings <a href="#TORBUTTON-DESIGN">[TORBUTTON-DESIGN]</a>. This has been confirmed by empirical studies like the <a href="#PANOPTICLICK">[PANOPTICLICK]</a> study done by the EFF.</p>
+<h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#incentives-for-collecting-data" id="incentives-for-collecting-data">Incentives for Collecting Data</a></h1>
 <p id="rfc.section.5.p.1">There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to identify a user with a higher degree of certainty.</p>
 <p id="rfc.section.5.p.2">Unfortunately there seem to be few costs associated with keeping large linked data sets around - stolen user credentials in the 10s of thousands rarely result in more than a brief notice in the news anymore. To date the IETF community have focused on how to avoid the use of long-term credentials (passwords) to reduce the effects of such attacks. We need to broaden our scope to find ways to disincentivize the (over)use of linkable attributes.</p>
-<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#the-lcd-of-privacy" id="the-lcd-of-privacy">The LCD of privacy</a></h1>
-<p id="rfc.section.6.p.1">Out of all the transactions that a given user performs over the time her traffic is being observed by an adversary, the most linkable one will define her level of privacy towards that adversary.</p>
-<p id="rfc.section.6.p.2">In other words, linkability is the least common denominator of privacy and must be treated as the privacy killer that it is. When we allow for too much linkability in protocols we must acknowledge the fact that we&#8217;re building something that can&#8217;t provide privacy.</p>
-<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#conclusions" id="conclusions">&#8220;Conclusions&#8221;</a></h1>
-<p id="rfc.section.7.p.1">Part of the Internet economy seems to be based on linked data sets and linkable attributes. Changing this will require creating negative incentives for service providers, making it less attractive to keep data around aswell as establishing technical mechanisms that allow service providers access to the attributes they do need in order to conduct their business wo having to rely on linkable attributes. Success will depend on carefully engineering the negative incentives to match the technical mechanisms in order to promote good behaviour. </p>
-<p id="rfc.section.7.p.2">Last but not least the Internet community needs to decide what it considers acceptable behaviour wrt to attribute linking.</p>
-<p id="rfc.section.7.p.3">[FIXME: needs updating]</p>
-<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#references" id="references">References</a></h1>
-<p id="rfc.section.8.p.1">[TORBUTTON-DESIGN] &#8220;Torbutton Design Documentation&#8221; https://www.torproject.org/torbutton/en/design/ [PANOPTICLICK] &#8220;How Unique Is Your Web Browser?&#8221; https://panopticlick.eff.org/browser-uniqueness.pdf</p>
-<h1 id="rfc.section.9"><a href="#rfc.section.9">9.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
-<p id="rfc.section.9.p.1">Many thanks to Nick Mathewson for important contributions on the topic of linkability. Many thanks also to Lucy Lynch who is the source of much wisdom, the &#8220;I&#8217;m just browsing&#8221; response to identification on the web in particular.</p>
-<h1 id="rfc.references"><a href="#rfc.references">10.</a> References</h1>
+<h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#the-least-common-denominator-of-privacy" id="the-least-common-denominator-of-privacy">The Least common Denominator of Privacy</a></h1>
+<p id="rfc.section.6.p.1">Out of all the transactions that a given user performs over the time her traffic is being observed by an adversary, the most linkable one will define her level of privacy towards that adversary. In other words, linkability is the least common denominator of privacy and must be treated as the privacy killer that it is. When we allow for too much linkability in protocols we must acknowledge the fact that we&#8217;re building something that can&#8217;t provide privacy.</p>
+<p id="rfc.section.6.p.2">Part of the Internet economy seems to be based on linked data sets and linkable attributes. Changing this will require creating negative incentives for service providers, making it less attractive to keep data around aswell as establishing technical mechanisms that allow service providers access to the attributes they do need in order to conduct their business wo having to rely on linkable attributes. Success will depend on carefully engineering the negative incentives to match the technical mechanisms in order to promote good behaviour. </p>
+<h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#acknowledgements" id="acknowledgements">Acknowledgements</a></h1>
+<p id="rfc.section.7.p.1">Many thanks to Nick Mathewson for important contributions on the topic of linkability. Many thanks also to Lucy Lynch who is the source of much wisdom, the &#8220;I&#8217;m just browsing&#8221; response to identification on the web in particular.</p>
+<h1 id="rfc.references"><a href="#rfc.references">8.</a> Informative References</h1>
+<table>
+  <tbody>
+    <tr>
+      <td class="reference">
+        <b id="TORBUTTON-DESIGN">[TORBUTTON-DESIGN]</b>
+      </td>
+      <td class="top"><a>Perry, M.</a>, "<a href="https://www.torproject.org/torbutton/en/design/">Torbutton Design Documentation</a>", n.d..</td>
+    </tr>
+    <tr>
+      <td class="reference">
+        <b id="PANOPTICLICK">[PANOPTICLICK]</b>
+      </td>
+      <td class="top"><a>Eckersley, P.</a>, "<a href="https://panopticlick.eff.org/browser-uniqueness.pdf">How Unique Is Your Web Browser?</a>", n.d..</td>
+    </tr>
+  </tbody>
+</table>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
 </h1>
@@ -512,14 +519,12 @@
 
   	<li>1.   <a href="#rfc.section.1">Introduction</a></li>
 <li>2.   <a href="#rfc.section.2">A Simple Example</a></li>
-<li>3.   <a href="#rfc.section.3">From Linkable Identifiers to Attributes</a></li>
-<li>4.   <a href="#rfc.section.4">Another example of possible collection by service providers</a></li>
-<li>5.   <a href="#rfc.section.5">Incentives for collecting data</a></li>
-<li>6.   <a href="#rfc.section.6">The LCD of privacy</a></li>
-<li>7.   <a href="#rfc.section.7">&#8220;Conclusions&#8221;</a></li>
-<li>8.   <a href="#rfc.section.8">References</a></li>
-<li>9.   <a href="#rfc.section.9">Acknowledgements</a></li>
-<li>10.   <a href="#rfc.references">References</a></li>
+<li>3.   <a href="#rfc.section.3">Avoiding Linkable Attributes</a></li>
+<li>4.   <a href="#rfc.section.4">Linkability and Probability</a></li>
+<li>5.   <a href="#rfc.section.5">Incentives for Collecting Data</a></li>
+<li>6.   <a href="#rfc.section.6">The Least common Denominator of Privacy</a></li>
+<li>7.   <a href="#rfc.section.7">Acknowledgements</a></li>
+<li>8.   <a href="#rfc.references">Informative References</a></li>
 <li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
