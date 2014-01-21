@@ -85,7 +85,7 @@ Some examples of sources for fingerprintability in web browsers are information 
 Incentives for Collecting Data
 ==========
 
-There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to identify a user with a higher degree of certainty.
+There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to profile a user with a higher degree of certainty.
 
 Unfortunately there seem to be few costs associated with keeping large linked data sets around - stolen user credentials in the 10s of thousands rarely result in more than a brief notice in the news anymore. To date the IETF community have focused on how to avoid the use of long-term credentials (passwords) to reduce the effects of such attacks. We need to broaden our scope to find ways to disincentivize the (over)use of linkable attributes.
 
