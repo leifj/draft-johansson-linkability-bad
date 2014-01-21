@@ -29,7 +29,7 @@
       </address>
     </author>
 
-    <date year="2014" month="January" day="15"/>
+    <date year="2014" month="January" day="21"/>
 
     <area>Security</area>
     <workgroup>General</workgroup>
@@ -38,7 +38,7 @@
     <abstract>
 
 
-<t>Current debate on pervasive monitoring often focus on passive attacks on the protocol and transport layers but even if these issues were eliminated through the judicious use of encryption, roughly the same information would still be available to an attacker who is able to (legally or otherwize) obtain access to linked data sets which are being maintained by large content and service providers.</t>
+<t>Current debate on pervasive monitoring often focus on passive attacks on the protocol and transport layers but even if these issues were eliminated through the judicious use of encryption, roughly the same information would still be available to an attacker who is able to (legally or otherwise) obtain access to linked data sets which are being maintained by large content and service providers.</t>
 
 
 
@@ -52,20 +52,20 @@
 
 <section anchor="introduction" title="Introduction">
 
-<t>This I-D is submitted as a position paper for the joint IAB/W3C STRINT workshop 2014. The author wishes to call attention to the fact that linked data sets are a source of information, sometimes every bit as useful as anything that can be gleaned from passive monitoring of Internet traffic. Such data sets are routinely generated and maintained by service and content providers and are often a source of secondary (or even primary) income for those that own and generate them.</t>
+<t>This I-D is submitted as a position paper for the joint IAB/W3C STRINT workshop 2014. The authors wishes to call attention to the fact that linked data sets are a source of information, sometimes every bit as useful as anything that can be gleaned from passive monitoring of Internet traffic. Such data sets are routinely generated and maintained by service and content providers and are often a source of secondary (or even primary) income for those that own and generate them.</t>
 
-<t>In the current discussion on pervasive monitoring we often overlook the fact that even as more encryption is used, making passive attacks harder, focus may simply shift to active attacks on owners of linked data sets. We should strike at the root of this problem by making it less appealing to maintain these data sets and by offering users a measure of control over how their information is used and shared.</t>
+<t>In the current discussion on pervasive monitoring we often overlook the fact that even as more encryption is used, making passive attacks harder, focus may simply shift to attacks on owners of linked data sets. We should strike at the root of this problem by making it less appealing to maintain these data sets and by offering users a measure of control over how their information is used and shared.</t>
 
-<t>Linkability is not a new concept and the authors do not propose to (re)define the concept in this draft. Instead our intent is to show (with some simple examples) how linkability occurs in practice and what effect linkability has on privacy on the Internet.</t>
+<t>Linkability is by no means a new concept and the authors do not propose to (re)define the concept in this draft. Instead our intent is to show, using some simple examples, how linkability occurs in practice and what effect linkability has on privacy on the Internet.</t>
 
 </section>
 <section anchor="a-simple-example" title="A Simple Example">
 
 <t>Service providers (we use this term in a general sense, and not with a view to any particular protocols etc) typically manage users and billing records. This leads to a data set being created for every user of that service. Most services employ a simple pattern for user enrollment which relies on an email address as a means of (supposedly) uniquely identifying the user. The email address has become the defacto user identifier on the Internet.</t>
 
-<t>When a user pays for the service a pair of linked data sets is created: the user data at the service provider is associated (via the credit card information) to the user data held by the credit card company. The value of the linked data, aswell as the risk to the user, is higher than the value/risk involved in the two data sets taken as separate entities. For instance the linked data says something about the buying habits of the user (based on the use of the particular credit card) which in itself is valuable information. </t>
+<t>When a user pays for the service a pair of linked data sets is created: the user data at the service provider is associated (via the credit card information) to the user data held by the credit card company. The value of the linked data, as well as the risk to the user, is higher than the value/risk involved in the two data sets taken as separate entities. For instance the linked data says something about the buying habits of the user (based on the use of the particular credit card) which in itself is valuable information. </t>
 
-<t>Linking increases the risk to the user aswell. With every service that stores the users credit card the risk of exposure to active attacks increase as events in recent years have made it painfully clear.</t>
+<t>Linking increases the risk to the user as well. With every service that stores the users credit card the risk of exposure to active attacks increase as events in recent years have made it painfully clear.</t>
 
 <t>If this example seems overly simplified or even naive to bring up, consider the simple observation that when we visit a store in the physical world we have the ability to “browse”, i.e to view and select among the offered goods without having to identify ourselves or prove our ability to pay for any of the goods in the store. This aspect of the real world has not been translated into the online world where prospective customers are routinely fingerprinted and our behaviour tracked even when we have shown no intention of engaging in a business transaction with the store owner.</t>
 
@@ -78,12 +78,12 @@
 
 <t>Instead of using the credit card number as an implicit grant (of a right to obtain payment), a token that isn’t linkable across identifier domains could be used to represent an explicit grant issued on behalf of the user by the credit card company to the service provider. This is a simple example of a general pattern: instead of using a linkable user identifier, provide access to an attribute representing some property of the user that used to grant specific access. </t>
 
-<t>Some credit card companies have actually taken first steps towards this by involving the user directly in a second factor authentication (typically to reduce the risk of fraud). This practice follows a model for 3:rd party authentication services (aka identity providers) commonly used in the enterprise and R&amp;E community. Experience from the R&amp;E identity federation community shows that access control using identity providers and non-linkable pseudonomous identifiers is by no means problem free, but can be made to work in many situations. </t>
+<t>Some credit card companies have actually taken first steps towards this by involving the user directly in a second factor authentication (typically to reduce the risk of fraud). This practice follows a model for 3:rd party authentication services (aka identity providers) commonly used in the enterprise and R&amp;E community. Experience from the R&amp;E identity federation community shows that access control using identity providers and non-linkable pseudonymous identifiers is by no means problem free, but can be made to work in many situations. </t>
 
 </section>
 <section anchor="linkability-and-probability" title="Linkability and Probability">
 
-<t>Links between data sets do not necessarily have to have be uniquely linkable in order to blur the line between private and public actions on the Internet. Linkability is really about probability and often absolute certainty (demonstrated in the example above) is not needed for an an adversary to conclude that two actions were likely performed by the same client.</t>
+<t>Links between data sets do not necessarily have to have be uniquely linkable in order to blur the line between private and public actions on the Internet. Linkability is really about probability and often absolute certainty (demonstrated in the example above) is not needed for an adversary to conclude that two actions were likely performed by the same client.</t>
 
 <t>Web browsers are typically fingerprintable even when the user tries to avoid sticking out when compared to other users of a given web site. Regardless of encryption, the operator of a web site can more often than not tell one user from another by looking at information sent by the browser without the users knowledge.</t>
 
@@ -92,7 +92,7 @@
 </section>
 <section anchor="incentives-for-collecting-data" title="Incentives for Collecting Data">
 
-<t>There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to identify a user with a higher degree of certainty.</t>
+<t>There are strong incentives for service providers to enrich the value of their data set using attribute linking. The value of the attribute naturally increase with the inverse of the size of the set of users who share that attribute: the more specific the attribute the more valuable it is, because it can be used to profile a user with a higher degree of certainty.</t>
 
 <t>Unfortunately there seem to be few costs associated with keeping large linked data sets around - stolen user credentials in the 10s of thousands rarely result in more than a brief notice in the news anymore. To date the IETF community have focused on how to avoid the use of long-term credentials (passwords) to reduce the effects of such attacks. We need to broaden our scope to find ways to disincentivize the (over)use of linkable attributes.</t>
 
@@ -101,7 +101,9 @@
 
 <t>Out of all the transactions that a given user performs over the time her traffic is being observed by an adversary, the most linkable one will define her level of privacy towards that adversary. In other words, linkability is the least common denominator of privacy and must be treated as the privacy killer that it is. When we allow for too much linkability in protocols we must acknowledge the fact that we’re building something that can’t provide privacy.</t>
 
-<t>Part of the Internet economy seems to be based on linked data sets and linkable attributes. Changing this will require creating negative incentives for service providers, making it less attractive to keep data around aswell as establishing technical mechanisms that allow service providers access to the attributes they do need in order to conduct their business wo having to rely on linkable attributes. Success will depend on carefully engineering the negative incentives to match the technical mechanisms in order to promote good behaviour. </t>
+<t>Part of the Internet economy seems to be based on linked data sets and linkable attributes. Changing this will require creating negative incentives for service providers, making it less attractive to keep data around as well as establishing technical mechanisms that allow service providers access to the attributes they do need in order to conduct their business without having to rely on linkable attributes. Success will depend on carefully engineering the negative incentives to match the technical mechanisms in order to promote good behaviour. </t>
+
+<t>The authors believe that the IETF community should attempt to design technical controls into existing and future protocols that make it possible for users of Internet technology to have a choice when to provide linkable data to services and eavesdroppers and when not to.</t>
 
 </section>
 <section anchor="acknowledgements" title="Acknowledgements">
